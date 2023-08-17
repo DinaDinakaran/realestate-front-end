@@ -25,7 +25,6 @@ const Layout = () => {
   useEffect(() => {
     const getTokenAndRegsiter = async () => {
       const res = await getAccessTokenWithPopup();
-      console.log("access_token",'-----------------------')
       localStorage.setItem("access_token", res);
       setUserDetails((prev) => ({ ...prev, token: res }));
       mutate(res)
@@ -33,7 +32,6 @@ const Layout = () => {
 
 
     if(isAuthenticated){
-      console.log("hello")
       getTokenAndRegsiter();
     };
   }, [isAuthenticated]);
