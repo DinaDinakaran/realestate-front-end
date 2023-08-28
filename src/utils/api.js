@@ -1,9 +1,11 @@
 import axios from "axios";
 import dayjs from "dayjs";
 import { toast } from "react-toastify";
+const url ="https://realestate-backend-api.onrender.com/api"
+//const url ="http://localhost:8000/api"
 
 export const api = axios.create({
-  baseURL: "https://realestate-backend-api.onrender.com/api",
+  baseURL: url,
 });
 
 export const getAllProperties = async () => {
@@ -17,7 +19,7 @@ export const getAllProperties = async () => {
     }
     return response.data;
   } catch (error) {
-    toast.error("Something went wrong");
+   // toast.error("Something went wrong");
     throw error;
   }
 };
